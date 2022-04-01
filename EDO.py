@@ -18,6 +18,7 @@ def geraponto(x,y):
     Ey = (y/pow((pow((x+5),2)+pow(y,2)),1.5))+(y/pow((pow((x-5),2)+pow(y,2)),1.5))
     Ex = ((x+5)/pow((pow((x+5),2)+pow(y,2)),1.5))+((x-5)/pow((pow((x-5),2)+pow(y,2)),1.5))
     return (Ey/Ex)
+   
 for k in range(0,51):
     x = random.randint(-100,100)
     while x==0:
