@@ -4,31 +4,29 @@
 # Nome: Geovane de Araújo Carvalho Conceição
 # Matrícula: 201310102711
 
-import random
 import matplotlib.pyplot as plt
 import numpy as np
 
-ponto = []
+# gera os pontos no intervalo dado para calcular o campo elétrico e plotar o fluxo
+def gerapontos(inicio,fim,passo):
+  x = np.arange(inicio,fim,passo)
+  y = np.arange(inicio,fim,passo)
+  return np.meshgrid(x,y)
 
-# Função usada para plotar o gráfico
-def plotar(ponto):
-    plt.title("Campo Elétrico")
-    plt.plot(ponto,".")
-    plt.show()
+def calculacampo(x,y):
+  # cargas do problema
+  q1,q2 = -10,10
+  # posições das cargas
+  q1x,q1y = -5,0
+  q2x,q2y = 5,0
 
-# Função que gera pontos a serem plotados a partir de uma entrada e a função
-def geraponto(x,y):
-    Ey = (y/pow((pow((x+5),2)+pow(y,2)),1.5))+(y/pow((pow((x-5),2)+pow(y,2)),1.5))
-    Ex = ((x+5)/pow((pow((x+5),2)+pow(y,2)),1.5))+((x-5)/pow((pow((x-5),2)+pow(y,2)),1.5))
-    return (Ey/Ex)
+  # calcula campo eletrico
+  Ex = q1*(q1x-x)/(q1y**2+(q1x-x)**2)**1.5+q2*(q2x-x)/(q2y**2+(q2x-x)**2)**1.5
+  Ey = q1*y/(q1y**2+(q1x-x)**2)**1.5+ q2*y/(q2y**2+(q2x-x)**2)**1.5
 
-for k in range(0,51):
-    x = random.randint(0,50)
-    #O domínio da função não inclui onde x=0 nem os pontos (-5,0) e (5,0)
-    while x==0:
-        x = random.randint(0,50)
-    y = random.randint(0,50)
-    while ((x==-5 or x==5) and y==0):
-        y = random.randint(0,50)
-    ponto.append(geraponto(x,y))
-plotar(ponto)
+  return Ex,Ey
+
+x,y = gerapontos(-10,10,0.01)
+Ex,Ey = calculacampo(x,y)
+plt.streamplot(x,y,Ex,Ey)
+plt.show()
