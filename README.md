@@ -4,4 +4,4 @@ Trabalho de Física II do curso de Ciência da Computação da Universidade do E
 
 Campo gerado:
 
-![image](https://user-images.githubusercontent.com/25599308/167690269-fa9ee8b6-641b-4a9d-aae0-2578dd320355.png)
+![image](https://user-images.githubusercontent.com/25599308/167690383-b63f8e87-d613-4fb4-8144-ea496f379acc.png)
