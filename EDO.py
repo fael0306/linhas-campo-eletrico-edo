@@ -22,7 +22,7 @@ def calculacampo(x,y):
 
   # calcula campo eletrico
   Ex = q1*(x-q1x)/((y-q1y)**2+(x-q1x)**2)**1.5+q2*(x-q2x)/((y-q2y)**2+(x-q2x)**2)**1.5
-  Ey = q1*(y-q1y)/((y-q1y)**2+(x-q1x)**2)**1.5+ q2*(y-q1y)/((y-q2y)**2+(x-q2x)**2)**1.5
+  Ey = q1*(y-q1y)/((y-q1y)**2+(x-q1x)**2)**1.5+q2*(y-q1y)/((y-q2y)**2+(x-q2x)**2)**1.5
 
   return Ex,Ey
 
