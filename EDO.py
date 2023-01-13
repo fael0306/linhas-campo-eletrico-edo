@@ -7,7 +7,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# gera os pontos no intervalo dado para calcular o campo elétrico e plotar o fluxo
+# Gera os pontos no intervalo dado para calcular o campo elétrico e plotar o fluxo
 def gerapontos(inicio,fim,passo):
   x = np.arange(inicio,fim,passo)
   y = np.arange(inicio,fim,passo)
@@ -20,7 +20,7 @@ def calculacampo(x,y):
   q1x,q1y = -5,0
   q2x,q2y = 5,0
 
-  # calcula campo eletrico
+  # Calcula campo elétrico
   Ex = q1*(x-q1x)/((y-q1y)**2+(x-q1x)**2)**1.5+q2*(x-q2x)/((y-q2y)**2+(x-q2x)**2)**1.5
   Ey = q1*(y-q1y)/((y-q1y)**2+(x-q1x)**2)**1.5+q2*(y-q1y)/((y-q2y)**2+(x-q2x)**2)**1.5
 
